@@ -38,6 +38,7 @@
         <Button Text="ВОЙТИ" 
                 TextColor="Black" 
                 BackgroundColor="Transparent"
+                Clicked="OnLogClick"
                 />
     </StackLayout>
 </ContentPage>

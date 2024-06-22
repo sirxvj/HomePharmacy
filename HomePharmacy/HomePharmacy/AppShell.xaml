@@ -7,8 +7,47 @@
     Shell.FlyoutBehavior="Disabled"
     Title="HomePharmacy">
 
+    <!---->
+    <!--<ShellContent
+ ContentTemplate="{DataTemplate local:MainPage}"
+ Route="MainPage" 
+     Shell.TabBarIsVisible="False"/>
     <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+ ContentTemplate="{DataTemplate local:Register}"
+ Route="Register" 
+     Shell.TabBarIsVisible="False"/>-->
+
+    <TabBar x:Name="tbr">
+        <!--<Tab Title="Sign"
+             x:Name="Login"
+            IsVisible="False"
+             >
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage"
+                Shell.TabBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Sign up"
+              x:Name="Sign"
+            IsVisible="True">
+            <ShellContent
+            ContentTemplate="{DataTemplate local:Register}"
+            Route="Register" 
+                Shell.TabBarIsVisible="False"/>
+        </Tab>-->
+        <Tab Title="Аптечки" Icon="pill.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Apteka}" />
+            
+        </Tab>
+        <Tab Title="Рецепты" Icon="pillbox.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Apteka}" />
+        </Tab>
+        <Tab Title="Карта" Icon="geo.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Apteka}" />
+        </Tab>
+        <Tab Title="Настройки" Icon="settings.webp">
+            <ShellContent ContentTemplate="{DataTemplate local:Apteka}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
