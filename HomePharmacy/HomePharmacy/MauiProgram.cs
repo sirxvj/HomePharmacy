@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Maui.GoogleMaps.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace HomePharmacy
 {
@@ -17,6 +18,12 @@ namespace HomePharmacy
 
 #if DEBUG
     		builder.Logging.AddDebug();
+#endif
+
+#if ANDROID
+        builder.UseGoogleMaps();
+#elif IOS
+            builder.UseGoogleMaps("AIzaSyD3bLtZkNPObtKxnT7aa74Mh4qbcBYj8rU");
 #endif
 
             return builder.Build();
