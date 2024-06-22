@@ -8,6 +8,7 @@
             Routing.RegisterRoute("MainPage", typeof(MainPage));
             Routing.RegisterRoute("Register", typeof(Register));
             Routing.RegisterRoute("Apteka", typeof(Apteka));
+            Routing.RegisterRoute("AddApteku",typeof(AddApteku));
         }
     }
 }
