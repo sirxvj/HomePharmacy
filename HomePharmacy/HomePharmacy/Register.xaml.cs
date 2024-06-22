@@ -10,6 +10,7 @@ public partial class Register : ContentPage
 	{
 		InitializeComponent();
         BindingContext = this;
+        Users = new();
 	}
     private async void OnLogClick(object sender, EventArgs e)
     {

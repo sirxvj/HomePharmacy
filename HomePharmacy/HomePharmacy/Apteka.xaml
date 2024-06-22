@@ -34,13 +34,13 @@
 
             <StackLayout Grid.Row="1" Spacing="10">
             <Frame BorderColor="LightGray" CornerRadius="5" >
-                <CollectionView x:Name="AptekasCollectionView">
+                <CollectionView x:Name="AptekasCollectionView" SelectionChanged="AptekasCollectionView_SelectionChanged">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Horizontal" >
-                                <StackLayout.GestureRecognizers>
+                                <!--<StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OnAptekaClick"/>
-                                </StackLayout.GestureRecognizers>
+                                </StackLayout.GestureRecognizers>-->
                                 <Label Text="{Binding Name}" VerticalOptions="Center" />
                                 <Label Text="{Binding QuantityMedicines}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
                                 <Image Source="right_arrow.webp" WidthRequest="30" VerticalOptions="Center"/>

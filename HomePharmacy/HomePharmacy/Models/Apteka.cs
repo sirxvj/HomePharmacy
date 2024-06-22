@@ -1,15 +1,17 @@
-﻿namespace HomePharmacy.Models
+﻿using System.Collections.ObjectModel;
+
+namespace HomePharmacy.Models
 {
     public class Apteka
     {
         public string Name { get;set; }
-        public List<Medicine> Medicines { get; set; }
+        public ObservableCollection<Medicine> Medicines { get; set; }
 
         public int QuantityMedicines {  get; set; }
         public Apteka() 
         {
             Name = string.Empty;
-            Medicines = new List<Medicine>();
+            Medicines = new();
             QuantityMedicines = 0;
         }
 

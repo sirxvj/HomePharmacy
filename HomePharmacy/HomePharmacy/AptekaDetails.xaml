@@ -15,7 +15,7 @@
         <StackLayout>
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
                                    Padding="10">
-                <Label Text="Домашняя аптечка"/>
+                <Label x:Name="NameLabel"/>
                 <Image Source="right_arrow.png"
                  WidthRequest="20" />
             </HorizontalStackLayout>
@@ -28,14 +28,20 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <StackLayout >
-                    <Label Text="Анальгин" TextColor="Black" />
-                    <Label Text="Метамизол натрия" TextColor="Orange" />
-                </StackLayout>
-                <StackLayout >
-                    <Label Text="12.5.2018" TextColor="Red" HorizontalOptions="End" />
-                    <Label Text="0 табл." TextColor="Red" HorizontalOptions="End" />
-                </StackLayout>
+                <CollectionView x:Name="MedicinesCollectionView" ItemsSource="{Binding Medicines}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" TextColor="Black" />
+                                <Label Text="{Binding MainSubstance}" TextColor="Orange" />
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="{Binding BestBeforeDate}" TextColor="Red" HorizontalOptions="End" />
+                                <Label Text="{Binding Quantity}" TextColor="Red" HorizontalOptions="End" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Grid>
 
             <!-- Ibuprofen --><!--

@@ -13,11 +13,11 @@ namespace HomePharmacy.Models
         //оранжевое поле под названием рецепта
         string mainSubstance;
 
-        string bestBeforeDate;
+        DateTime bestBeforeDate;
 
         string quantity;
 
-        public Medicine(string name,string mainSubstance,string bestBeforeDate,string quantity)
+        public Medicine(string name,string mainSubstance,DateTime bestBeforeDate,string quantity)
         {
             this.name = name;
             this.mainSubstance = mainSubstance;
