@@ -26,6 +26,9 @@
     <MauiXaml Update="Recept.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ReceptDetails.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Register.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

@@ -33,8 +33,11 @@
      
 
             <StackLayout Grid.Row="1" Spacing="10">
-                <Frame BorderColor="LightGray" CornerRadius="5">
+                <Frame BorderColor="LightGray" CornerRadius="5" >
                     <StackLayout Orientation="Horizontal" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAptekaClick"/>
+                        </StackLayout.GestureRecognizers>
                         <Label Text="Домашняя аптечка" VerticalOptions="Center" />
                         <Label Text="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
                         <Image Source="right_arrow.webp" WidthRequest="30" VerticalOptions="Center"/>

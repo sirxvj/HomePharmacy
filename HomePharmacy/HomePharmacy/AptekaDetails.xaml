@@ -8,74 +8,51 @@
                Shell.TitleColor="White">
 
     <ContentPage.Content>
+
+
+
+
         <StackLayout>
-            <!-- Header -->
-            <Grid BackgroundColor="Black" Padding="10">
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
+                                   Padding="10">
+                <Label Text="Домашняя аптечка"/>
+                <Image Source="right_arrow.png"
+                 WidthRequest="20" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand">
+                <Image Source="edit2.png" WidthRequest="50" HorizontalOptions="End"></Image>
+            </HorizontalStackLayout>
+            <!-- Analgin -->
+            <Grid Padding="10">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackLayout >
+                    <Label Text="Анальгин" TextColor="Black" />
+                    <Label Text="Метамизол натрия" TextColor="Orange" />
+                </StackLayout>
+                <StackLayout >
+                    <Label Text="12.5.2018" TextColor="Red" HorizontalOptions="End" />
+                    <Label Text="0 табл." TextColor="Red" HorizontalOptions="End" />
+                </StackLayout>
+            </Grid>
+
+            <!-- Ibuprofen --><!--
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Аптечка"
-                       TextColor="White"
-                       VerticalOptions="Center" />
-                <Button Text="+" 
-                        BackgroundColor="Transparent"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        Grid.Column="1"
-                        VerticalOptions="Center" />
-            </Grid>
-
-            <!-- Medicine List -->
-            <StackLayout Padding="10">
-                <!-- Home Medicine Header -->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Label Text="Домашняя аптечка"
-                           VerticalOptions="Center" />
-                    <ImageButton Source="calendar_icon.png"
-                                 Grid.Column="1"
-                                 VerticalOptions="Center" />
-                </Grid>
-
-                <!-- Medicine Items -->
-                <StackLayout Spacing="10">
-                    <!-- Analgin -->
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout>
-                            <Label Text="Анальгин" TextColor="Black" />
-                            <Label Text="Метамизол натрия" TextColor="Orange" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" HorizontalOptions="End">
-                            <Label Text="12.5.2018" TextColor="Red" HorizontalOptions="End" />
-                            <Label Text="0 табл." TextColor="Red" HorizontalOptions="End" />
-                        </StackLayout>
-                    </Grid>
-
-                    <!-- Ibuprofen -->
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout>
-                            <Label Text="Ибупрофен" TextColor="Black" />
-                            <Label Text="Ибупрофен" TextColor="Orange" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" HorizontalOptions="End">
-                            <Label Text="5.25.2019" TextColor="Green" HorizontalOptions="End" />
-                            <Label Text="5 свч." TextColor="Green" HorizontalOptions="End" />
-                        </StackLayout>
-                    </Grid>
+                <StackLayout>
+                    <Label Text="Ибупрофен" TextColor="Black" />
+                    <Label Text="Ибупрофен" TextColor="Orange" />
                 </StackLayout>
-            </StackLayout>
+                <StackLayout Grid.Column="1" HorizontalOptions="End">
+                    <Label Text="5.25.2019" TextColor="Green" HorizontalOptions="End" />
+                    <Label Text="5 свч." TextColor="Green" HorizontalOptions="End" />
+                </StackLayout>
+            </Grid>-->
         </StackLayout>
     </ContentPage.Content>
 
