@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Maui.GoogleMaps;assembly=Maui.GoogleMaps"
              x:Class="HomePharmacy.Map"
-             Title="Map"
+             Title="Карта"
              Shell.TabBarIsVisible="True"
              Shell.BackgroundColor="Black"
              Shell.TitleColor="White">
 
     <maps:Map x:Name="mymap"
-              VerticalOptions="FillAndExpand" />
+              VerticalOptions="FillAndExpand"
+              />
    
 </ContentPage>
