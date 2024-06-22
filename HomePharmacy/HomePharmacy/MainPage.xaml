@@ -8,9 +8,11 @@
         <StackLayout Padding="20, 20, 20, 200" VerticalOptions="Center">
             <Image Margin="50" Source="hand.png" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center" />
 
-            <Entry Placeholder="Эл. почта или имя пользователя" />
+            <Entry Placeholder="Эл. почта или имя пользователя"
+                   x:Name="EmailEntry"/>
 
-            <Entry Placeholder="Пароль" IsPassword="True" />
+            <Entry Placeholder="Пароль" IsPassword="True" 
+                   x:Name="PasswordEntry"/>
 
             <Button Margin="30" Text="ВХОД" BackgroundColor="Black" TextColor="White" Clicked="OnLogClick" />
 

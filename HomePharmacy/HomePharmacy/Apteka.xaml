@@ -33,16 +33,23 @@
      
 
             <StackLayout Grid.Row="1" Spacing="10">
-                <Frame BorderColor="LightGray" CornerRadius="5" >
-                    <StackLayout Orientation="Horizontal" >
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnAptekaClick"/>
-                        </StackLayout.GestureRecognizers>
-                        <Label Text="Домашняя аптечка" VerticalOptions="Center" />
-                        <Label Text="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
-                        <Image Source="right_arrow.webp" WidthRequest="30" VerticalOptions="Center"/>
-                    </StackLayout>
-                </Frame>
+            <Frame BorderColor="LightGray" CornerRadius="5" >
+                <CollectionView x:Name="AptekasCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" >
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnAptekaClick"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="{Binding Name}" VerticalOptions="Center" />
+                                <Label Text="{Binding QuantityMedicines}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
+                                <Image Source="right_arrow.webp" WidthRequest="30" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Frame>
                 <Frame BorderColor="LightGray" CornerRadius="5">
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Дачная аптечка" VerticalOptions="Center" />

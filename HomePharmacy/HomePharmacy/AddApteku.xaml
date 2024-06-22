@@ -17,14 +17,16 @@
                 <Label Text="Название:"
                        VerticalOptions="Center" />
                 <Entry Placeholder="Аптечка 1" 
-                       HorizontalOptions="FillAndExpand"/>
+                       HorizontalOptions="FillAndExpand"
+                       x:Name="NameEntry"/>
             
             <Button Text="СОХРАНИТЬ АПТЕЧКУ"
                     BackgroundColor="Black"
                     TextColor="White"
                     FontAttributes="Bold"
                     VerticalOptions="Center"
-                    HorizontalOptions="Center" Margin="30"/>
+                    HorizontalOptions="Center" Margin="30"
+                    Clicked="OnOkButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
