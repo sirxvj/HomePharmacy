@@ -12,7 +12,7 @@
 
             <Entry Placeholder="Пароль" IsPassword="True" />
 
-            <Button Margin="30" Text="ВХОД" BackgroundColor="Black" TextColor="White" />
+            <Button Margin="30" Text="ВХОД" BackgroundColor="Black" TextColor="White" Clicked="OnLogClick" />
 
         <Button Text="ЗАРЕГИСТРИРОВАТЬСЯ" BackgroundColor="Transparent" TextColor="Black" Clicked="OnRegClick" />
         <!--<Label Text="ЗАРЕГИСТРИРОВАТЬСЯ" HorizontalOptions="Center" TextColor="Black" Clicked="OnRegisterButtonClicked" />-->

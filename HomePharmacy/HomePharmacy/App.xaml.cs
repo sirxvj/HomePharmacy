@@ -8,7 +8,9 @@
 
             MainPage = new AppShell();
 
+           
             Shell.Current.GoToAsync("MainPage");
+            Shell.SetTabBarIsVisible(Application.Current.MainPage, false);
         }
     }
 }

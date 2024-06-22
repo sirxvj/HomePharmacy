@@ -28,7 +28,8 @@
         <Button Text="ЗАРЕГИСТРИРОВАТЬСЯ" 
                 BackgroundColor="Black" 
                 TextColor="White" 
-                FontAttributes="Bold"/>
+                FontAttributes="Bold" Clicked="OnRegClick"
+                />
 
         <Label Text="Уже зарегистрирован?" 
                HorizontalOptions="Center" 
