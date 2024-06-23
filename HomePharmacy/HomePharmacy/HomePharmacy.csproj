@@ -86,6 +86,9 @@
 	  <MauiXaml Update="EditApteka.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="EditRecept.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Map.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

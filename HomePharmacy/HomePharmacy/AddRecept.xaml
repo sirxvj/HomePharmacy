@@ -9,7 +9,7 @@ Shell.TitleColor="White">
     <VerticalStackLayout>
 
        
-        <Entry Placeholder="Аптечка 1" 
+        <Entry Placeholder="Рецепт 1" 
            HorizontalOptions="FillAndExpand"
            x:Name="NameEntry"/>
 

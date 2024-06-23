@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HomePharmacy.EditApteka"
-             Title="Редактировать аптечку"        
+             x:Class="HomePharmacy.EditRecept"
+             Title="Редактировать рецепт"        
              Shell.TabBarIsVisible="True"
            Shell.BackgroundColor="Black"
             Shell.TitleColor="White">
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="15">
-            <Label Text="Редактирование аптечки"
+            <Label Text="Редактирование рецепта"
             FontSize="Large"
             Margin="20"
             HorizontalOptions="Center" />
@@ -16,18 +16,28 @@
 
             <Label Text="Название:"
                 VerticalOptions="Center" />
-            <Entry Placeholder="Аптечка 1" 
+            <Entry Placeholder="Рецепт 1" 
                 HorizontalOptions="FillAndExpand"
                 x:Name="NameEntry"/>
-
-            <Button Text="СОХРАНИТЬ АПТЕЧКУ"
+            <Label Text="Статус:"
+                VerticalOptions="Center" />
+            <Entry Placeholder="Активный" 
+                HorizontalOptions="FillAndExpand"
+                x:Name="StatusEntry"/>
+            <Label Text="Срок годности:"
+                VerticalOptions="Center" />
+            <DatePicker Date="01:01:19" 
+                HorizontalOptions="FillAndExpand"
+                x:Name="DatePick"/>
+            
+            <Button Text="СОХРАНИТЬ РЕЦЕПТ"
              BackgroundColor="Black"
              TextColor="White"
              FontAttributes="Bold"
              VerticalOptions="Center"
              HorizontalOptions="Center" Margin="30"
              Clicked="OnOkButtonClicked"/>
-            <Button Text="УДАЛИТЬ АПТЕЧКУ"
+            <Button Text="УДАЛИТЬ РЕЦЕПТ"
              BackgroundColor="Black"
              TextColor="White"
              FontAttributes="Bold"

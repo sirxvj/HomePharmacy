@@ -10,14 +10,48 @@
 
 
         <ContentPage.Content>
-            <StackLayout Padding="10" BackgroundColor="Black">
-                <!-- Header -->
+        <StackLayout>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
+                                   Padding="10">
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer 
+                    Tapped="OnEditClick"/>
+                </HorizontalStackLayout.GestureRecognizers>
+                <Label x:Name="NameLabel" Text="{Binding Name}"/>
+            </HorizontalStackLayout>
+            
+            <CollectionView x:Name="MedicinesCollectionView" ItemsSource="{Binding Medicines}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <Label Text="{Binding name}" TextColor="Black" />
+                                <Label Text="{Binding mainSubstance}" TextColor="Orange" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" HorizontalOptions="End">
+                                <Label Text="{Binding bestBeforeDate.Date}" TextColor="Red" HorizontalOptions="EndAndExpand" />
+                                <Label Text="{Binding quantity}" TextColor="Red" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+
+        <!--<StackLayout Padding="10" BackgroundColor="Black">
+                --><!-- Header --><!--
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
                     <Label Text="Медицинский рецепт" TextColor="White" FontSize="20" FontAttributes="Bold"/>
                 </StackLayout>
-                <!-- Prescription Section -->
+                --><!-- Prescription Section --><!--
                 <StackLayout Padding="10" BackgroundColor="White">
-                    <!-- Аналгин Section -->
+                    --><!-- Аналгин Section --><!--
                     <StackLayout Orientation="Vertical" Margin="0,10">
                         <Label Text="Анальгин" TextColor="Black" FontSize="18"/>
                         <StackLayout Orientation="Horizontal">
@@ -26,7 +60,7 @@
                         </StackLayout>
                         <Label Text="0 табл." TextColor="Red" FontSize="16"/>
                     </StackLayout>
-                    <!-- Ибупрофен Section -->
+                    --><!-- Ибупрофен Section --><!--
                     <StackLayout Orientation="Vertical" Margin="0,10">
                         <Label Text="Ибупрофен" TextColor="Black" FontSize="18"/>
                         <StackLayout Orientation="Horizontal">
@@ -37,7 +71,7 @@
                     </StackLayout>
                 </StackLayout>
                
-            </StackLayout>
+            </StackLayout>-->
         </ContentPage.Content>
 
 
