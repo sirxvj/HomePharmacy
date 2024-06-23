@@ -20,23 +20,28 @@ Shell.TitleColor="White">
             </ResourceDictionary>
         </ContentPage.Resources>
 
-        <StackLayout Padding="10">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                <Label Text="Медицинский рецепт 1" HorizontalOptions="StartAndExpand"/>
-                <Label Text="Активный" Style="{StaticResource ActiveStyle}" HorizontalOptions="End"/>
-            </StackLayout>
-            <Label Text="5.26.2019" Style="{StaticResource ActiveStyle}" HorizontalOptions="End"/>
 
-            <BoxView HeightRequest="1" Color="LightGray" Margin="0,10"/>
+    <CollectionView x:Name="ReceptsCollection" >
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout Padding="10">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnReceptClick"
+                          CommandParameter="{Binding Name}"/>
+                    </StackLayout.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand"/>
+                        <Label Text="Активный" Style="{StaticResource ActiveStyle}" HorizontalOptions="End"/>
+                    </StackLayout>
+                    <Label Text="{Binding Date}" Style="{StaticResource ActiveStyle}" HorizontalOptions="End"/>
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                <Label Text="Медицинский рецепт 2" HorizontalOptions="StartAndExpand"/>
-                <Label Text="Неактивный" Style="{StaticResource InactiveStyle}" HorizontalOptions="End"/>
-            </StackLayout>
-            <Label Text="5.26.2019" Style="{StaticResource InactiveStyle}" HorizontalOptions="End"/>
-        </StackLayout>
+                    <BoxView HeightRequest="1" Color="LightGray" Margin="0,10"/>
 
-        
+                    </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
 
 
 

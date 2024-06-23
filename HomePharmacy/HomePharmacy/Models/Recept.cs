@@ -15,7 +15,7 @@ namespace HomePharmacy.Models
 
         public DateOnly Date { get; set; }
 
-        public ObservableCollection<Medicine> Medicines { get; set; }
+        public List<Medicine> Medicines { get; set; }
 
         public Recept() 
         {

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomePharmacy.AptekaDetails"
-             Title="Аптечка"
+              Title="Аптечка"
               Shell.TabBarIsVisible="True"
                Shell.BackgroundColor="Black"
                Shell.TitleColor="White">
@@ -10,55 +10,58 @@
     <ContentPage.Content>
 
 
-
-
         <StackLayout>
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
                                    Padding="10">
-                <Label x:Name="NameLabel"/>
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer 
+                    Tapped="OnEditClick"/>
+                </HorizontalStackLayout.GestureRecognizers>
+                <Label x:Name="NameLabel" Text="{Binding Name}"/>
                 <Image Source="right_arrow.png"
-                 WidthRequest="20" />
+                 WidthRequest="20" >
+                    
+                </Image>
             </HorizontalStackLayout>
-            <HorizontalStackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand">
-                <Image Source="edit2.png" WidthRequest="50" HorizontalOptions="End"></Image>
+            <HorizontalStackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand" Padding="10" Spacing="310">
+                <Image Source="tablet2.png" WidthRequest="30" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+Tapped="OnReceptClick"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="plus.png" WidthRequest="20" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                    Tapped="OnAddClick"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </HorizontalStackLayout>
-            <!-- Analgin -->
-            <Grid Padding="10">
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+            
+            
+            
                 <CollectionView x:Name="MedicinesCollectionView" ItemsSource="{Binding Medicines}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
+                        <Grid Padding="10" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
                             <StackLayout>
-                                <Label Text="{Binding Name}" TextColor="Black" />
-                                <Label Text="{Binding MainSubstance}" TextColor="Orange" />
+                                <Label Text="{Binding name}" TextColor="Black" />
+                                <Label Text="{Binding mainSubstance}" TextColor="Orange" />
                             </StackLayout>
-                            <StackLayout>
-                                <Label Text="{Binding BestBeforeDate}" TextColor="Red" HorizontalOptions="End" />
-                                <Label Text="{Binding Quantity}" TextColor="Red" HorizontalOptions="End" />
+                        <StackLayout Grid.Column="1" HorizontalOptions="End">
+                                <Label Text="{Binding bestBeforeDate.Date}" TextColor="Red" HorizontalOptions="EndAndExpand" />
+                                <Label Text="{Binding quantity}" TextColor="Red" HorizontalOptions="EndAndExpand" />
                             </StackLayout>
-                        </DataTemplate>
+                            
+                        </Grid>
+                    </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </Grid>
-
-            <!-- Ibuprofen --><!--
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <StackLayout>
-                    <Label Text="Ибупрофен" TextColor="Black" />
-                    <Label Text="Ибупрофен" TextColor="Orange" />
-                </StackLayout>
-                <StackLayout Grid.Column="1" HorizontalOptions="End">
-                    <Label Text="5.25.2019" TextColor="Green" HorizontalOptions="End" />
-                    <Label Text="5 свч." TextColor="Green" HorizontalOptions="End" />
-                </StackLayout>
-            </Grid>-->
+            
         </StackLayout>
     </ContentPage.Content>
 

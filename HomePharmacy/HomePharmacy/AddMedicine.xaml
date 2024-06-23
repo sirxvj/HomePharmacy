@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomePharmacy.AddMedicine"
+             Title="Добавить лекарство"
+              Shell.TabBarIsVisible="True"
+            Shell.BackgroundColor="Black"
+            Shell.TitleColor="White">
+    <VerticalStackLayout>
+        <StackLayout Padding="30" Spacing="15">
+            <Label Text="Добавление Лекарства"
+            FontSize="Large"
+            Margin="20"
+            HorizontalOptions="Center" />
+
+
+            <!--<Label Text="Название:"
+                VerticalOptions="Center" />-->
+            <Entry Placeholder="Название" 
+                HorizontalOptions="FillAndExpand"
+                x:Name="NameEntry"/>
+            <Entry Placeholder="Субстанция" 
+                HorizontalOptions="FillAndExpand"
+                x:Name="SubsEntry"/>
+
+            <DatePicker x:Name="DateEntry" Format="d">
+                <DatePicker.MinimumDate>7/10/2012</DatePicker.MinimumDate>
+                <DatePicker.MaximumDate>7/20/2025</DatePicker.MaximumDate>
+            </DatePicker>
+
+            <Entry Placeholder="Количество" 
+                HorizontalOptions="FillAndExpand"
+                 x:Name="qEntry"/>
+
+            <Button Text="СОХРАНИТЬ АПТЕЧКУ"
+             BackgroundColor="Black"
+             TextColor="White"
+             FontAttributes="Bold"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" Margin="30"
+             Clicked="OnOkButtonClicked"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

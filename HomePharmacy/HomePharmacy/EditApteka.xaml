@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomePharmacy.EditApteka"
+             Title="Редактировать аптечку"        
+             Shell.TabBarIsVisible="True"
+           Shell.BackgroundColor="Black"
+            Shell.TitleColor="White">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="15">
+            <Label Text="Добавление аптечки"
+            FontSize="Large"
+            Margin="20"
+            HorizontalOptions="Center" />
+
+
+            <Label Text="Название:"
+                VerticalOptions="Center" />
+            <Entry Placeholder="Аптечка 1" 
+                HorizontalOptions="FillAndExpand"
+                x:Name="NameEntry"/>
+
+            <Button Text="СОХРАНИТЬ АПТЕЧКУ"
+             BackgroundColor="Black"
+             TextColor="White"
+             FontAttributes="Bold"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" Margin="30"
+             Clicked="OnOkButtonClicked"/>
+            <Button Text="УДАЛИТЬ АПТЕЧКУ"
+            BackgroundColor="Black"
+ TextColor="White"
+ FontAttributes="Bold"
+ VerticalOptions="Center"
+ HorizontalOptions="Center" Margin="30"
+ Clicked="OnDelButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

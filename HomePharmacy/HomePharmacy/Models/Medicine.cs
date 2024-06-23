@@ -8,18 +8,20 @@ namespace HomePharmacy.Models
 {
     public class Medicine
     {
-        string name;
+        public string name { get; set; }
 
+        public bool IsChecked { get; set; }
         //оранжевое поле под названием рецепта
-        string mainSubstance;
+        public string mainSubstance { get; set; }
 
-        DateTime bestBeforeDate;
+        public DateTime bestBeforeDate { get; set; }
 
-        string quantity;
+        public string quantity { get; set; }
 
         public Medicine(string name,string mainSubstance,DateTime bestBeforeDate,string quantity)
         {
             this.name = name;
+            IsChecked = false;
             this.mainSubstance = mainSubstance;
             this.bestBeforeDate = bestBeforeDate;
             this.quantity = quantity;

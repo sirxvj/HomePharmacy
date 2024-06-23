@@ -19,6 +19,7 @@ public partial class Apteka : ContentPage
                 new Medicine ("Ибупрофен","Ибупрофен",new DateTime(2018, 5, 12),"5 свч.")
             }
         });
+
     }
     private async void OnAddClick(object sender, EventArgs e)
     {
@@ -27,15 +28,35 @@ public partial class Apteka : ContentPage
         await Navigation.PushAsync(addNewAptekaPage);
         //await Shell.Current.GoToAsync("AddApteku");
     }
-    //private async void OnAptekaClick(object sender, EventArgs e)
-    //{
-    //    //await Shell.Current.GoToAsync("AddApteku");
-    //    await Navigation.PushAsync(new AptekaDetails());
-    //}
+    private async void OnAptekaClick(object sender, EventArgs e)
+    {
+        
+        //await Shell.Current.GoToAsync("AddApteku");
+        var apteka = Aptekas.Where(x => x.Name == ((TappedEventArgs)e).Parameter?.ToString()).FirstOrDefault();
+        var detailsPage = new AptekaDetails(apteka);
+        detailsPage.AptekaEdited += OnAptekaEdited;
+        detailsPage.AptekaDeleted += OnAptekaDeleted;
+        if (apteka is not null)
+            await Navigation.PushAsync(detailsPage);
+    }
 
     private void OnAptekaAdded(object sender, Models.Apteka e)
     {
         Aptekas.Add(e);
+    }
+    private void OnAptekaEdited(object sender, Models.Apteka e)
+    {
+        var old = Aptekas.Where(x => x.Name == e.Name).First();
+        e.Medicines = old.Medicines;
+        Aptekas.Remove(old);
+        Aptekas.Add(e);
+    }
+    private void OnAptekaDeleted(object sender, Models.Apteka e)
+    {
+        var old = Aptekas.Where(x => x.Name == e.Name).First();
+        
+        Aptekas.Remove(old);
+        
     }
 
     private async void AptekasCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -51,4 +72,5 @@ public partial class Apteka : ContentPage
             ((CollectionView)sender).SelectedItem = null;
         }
     }
+
 }

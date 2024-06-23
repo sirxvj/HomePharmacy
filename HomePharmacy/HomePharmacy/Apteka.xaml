@@ -33,30 +33,33 @@
      
 
             <StackLayout Grid.Row="1" Spacing="10">
-            <Frame BorderColor="LightGray" CornerRadius="5" >
+            
                 <CollectionView x:Name="AptekasCollectionView" SelectionChanged="AptekasCollectionView_SelectionChanged">
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="LightGray" CornerRadius="5" >
                             <StackLayout Orientation="Horizontal" >
-                                <!--<StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnAptekaClick"/>
-                                </StackLayout.GestureRecognizers>-->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnAptekaClick"
+                                                          CommandParameter="{Binding Name}"/>
+                                </StackLayout.GestureRecognizers>
                                 <Label Text="{Binding Name}" VerticalOptions="Center" />
-                                <Label Text="{Binding QuantityMedicines}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
+                                <Label Text="{Binding Medicines.Count}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
                                 <Image Source="right_arrow.webp" WidthRequest="30" VerticalOptions="Center"/>
                             </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
                 </CollectionView>
 
-            </Frame>
-                <Frame BorderColor="LightGray" CornerRadius="5">
+           
+                <!--<Frame BorderColor="LightGray" CornerRadius="5">
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Дачная аптечка" VerticalOptions="Center" />
                         <Label Text="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Green"/>
                     <Image Source="right_arrow.webp" MaximumWidthRequest="30" VerticalOptions="Center"/>
                     </StackLayout>
-                </Frame>
+                </Frame>-->
                 <Button Text="+ ДОБАВИТЬ НОВУЮ АПТЕЧКУ" Clicked="OnAddClick"/>
             </StackLayout>
 

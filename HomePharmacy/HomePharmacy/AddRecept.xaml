@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomePharmacy.AddRecept"
+             Title="Добавить рецепт"
+               Shell.TabBarIsVisible="True"
+Shell.BackgroundColor="Black"
+Shell.TitleColor="White">
+    <VerticalStackLayout>
+
+       
+        <Entry Placeholder="Аптечка 1" 
+           HorizontalOptions="FillAndExpand"
+           x:Name="NameEntry"/>
+
+        <Label Text="Выберите лекарства"></Label>
+        
+        <CollectionView x:Name="MedicinesCollectionView" ItemsSource="{Binding Medicines}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout>
+                            <Label Text="{Binding name}" TextColor="Black" />
+                            <Label Text="{Binding mainSubstance}" TextColor="Orange" />
+                        </StackLayout> 
+                        <StackLayout Grid.Column="1" HorizontalOptions="Center" >
+                            <Label Text="{Binding bestBeforeDate.Date}" TextColor="Red"  />
+                            <Label Text="{Binding quantity}" TextColor="Red"  />
+                        </StackLayout>
+                        
+                        <CheckBox Margin="0" Grid.Column="2" x:Name="statusCheckBox" CheckedChanged="CheckBox_CheckedChanged"
+                                  HorizontalOptions="End" IsChecked="{Binding IsChecked}"/>
+                        
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="ДОБАВИТЬ РЕЦЕПТ"
+ BackgroundColor="Black"
+ TextColor="White"
+ FontAttributes="Bold"
+ VerticalOptions="Center"
+ HorizontalOptions="Center" Margin="30"
+ Clicked="OnOkButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

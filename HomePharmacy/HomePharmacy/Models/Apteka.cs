@@ -7,6 +7,7 @@ namespace HomePharmacy.Models
         public string Name { get;set; }
         public ObservableCollection<Medicine> Medicines { get; set; }
 
+       
         public int QuantityMedicines {  get; set; }
         public Apteka() 
         {
